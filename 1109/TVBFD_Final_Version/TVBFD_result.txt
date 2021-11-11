@@ -1,0 +1,29 @@
+
+smooth source function:
+delta:	0.005	0.01	0.05	0.1
+optimal lambda:	10000	15000	5000	10000
+optimal relative err:	0.0101848	0.0127693	0.0381934	0.0696275
+piecewise linear source function:
+delta:	0.0005	0.001	0.005	0.01	0.05	0.1
+optimal  lambda:	15000	10000	5000	15000	15000	15000
+optimal relative err:	0.0110484	0.0168067	0.0461756	0.0514928	0.125294	0.154165
+
+smooth source function:
+delta:	0.005	0.01	0.05	0.1
+optimal lambda:	35000	25000	2500	15000
+optimal relative err:	0.00701418	0.0128071	0.0398983	0.073554
+
+piecewise linear source function:
+delta:	0.0005	0.001	0.005	0.01	0.05	0.1
+optimal  lambda:	2.74102e+06	685608	52500	52500	25000	15000
+optimal relative err:	0.00818717	0.0138528	0.0389692	0.0443981	0.105808	0.178878
+
+continuous source function:
+delta:	0.005	0.01	0.05	0.1	0.2
+optimal lambda:	15000	15000	15000	5000	5000
+optimal relative err:	0.00725197	0.012034	0.0409286	0.0654182	0.107728
+
+piecewise constant source function:
+delta:	0.0005	0.001	0.005	0.01	0.05	0.1	0.2
+optimal lambda:	2.74102e+06	685608	27537.6	15000	15000	15000	15000
+optimal relative err:	0.0163697	0.0347404	0.0971744	0.109639	0.1284	0.156912	0.207383

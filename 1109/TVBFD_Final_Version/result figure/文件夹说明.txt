@@ -1,0 +1,40 @@
+2021年11月11日 21点17分
+程序说明：
+1.show_TVBFD.m
+对四个不同的源项，不同的噪声水平，给定最优的参数lambda,
+分别调用一维、二维TVBFD算法，计算相对误差，并出结果图。
+其调用的函数有：
+(1)TVBFD_figure1D.m
+   函数功能：
+      对给定的源项f,噪声水平和lambda，调用generate_noise_measure.m
+      生成含噪观测，然后调用一维TVBFD算法程序oneD_TVBFD_apply.m求解反演解f^m，并画出图像。
+
+(2)TVBFD_figure2D.m
+   函数功能：
+      对给定的源项f,噪声水平和lambda，调用generate_noise_measure.m
+      生成含噪观测，然后调用二维TVBFD算法程序TVBFD.m求解反演解f^m，并画出图像。
+   调用的函数：
+      split_bregman_for_TV_denoise.m  使用分裂Bregman迭代方法求解优化模型
+   
+      u^{m+1}=\arg \min J_{\mathrm{TV}}(u)+\frac{\lambda}{2}\left\|P^{-1} \hat{u}-\hat{g}^{m}\right\|^{2}
+
+
+2.test_TVBFD
+对四个不同的源项，不同的噪声水平，采用随机取值的方式找出最优的参数lambda，并返回。
+
+3.turing_lambda.m
+  对一维源项，在同一噪声水平下使用不同的lambda多次运行TVBFD算法，找到使得相对误差最小的lambda返回。
+
+4.turing_lambda2D.m
+  对二维源项，在同一噪声水平下使用不同的lambda多次运行TVBFD算法，找到使得相对误差最小的lambda返回。
+
+5.auto_turing_lambda.m
+  用IPOL上的ROF TV去噪那篇文章中的算法调lambda
+  效果不好，往往只在初始值取得最小的相对误差。有时间再改改。
+结果说明：
+1.TVBFD_result.txt中记录了对四个不同源项，在不同噪声水平下调出来的最优参数lambda的值，
+以及此时的相对误差，方便做表格。
+
+2.result figure
+其中所有结果都是正确的，1D是两个一维源项的反演结果。2D是两个二维源项的反演结果f^m的图，
+2Dresult中是真解、观测数据、含噪观测级反演解四个图放一起的结果。
